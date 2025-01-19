@@ -18,14 +18,14 @@ automated testing of docstring examples to ensure the code runs without error.
 Beyond basic NumPy docstring formatting conventions, developers should aim to:
 
 - Ensure all parameters (classes, functions, methods) and attributes (classes) are
-documented completely and consistently
+  documented completely and consistently
 - Add a `See Also` section that references related `aeon` code as applicable
 - Include citations to relevant sources in a `References` section
 - Include an `Examples` section that demonstrates at least basic functionality all
-public code
+  public code
 - The docstrings are rendered into `.rst` files and should be written taking this into
-account. For example, two ` characters are required for a code block instead of the
-one used in Markdown.
+  account. For example, two ` characters are required for a code block instead of the
+  one used in Markdown.
 
 In many cases, a parameter, attribute return object, or error may be described in many
 docstrings across aeon. To avoid confusion, developers should try to make sure their
@@ -70,6 +70,14 @@ n_cases_ : int
     Number of train instances in data passed to ``fit``.
 ```
 
+## Parameters
+
+random_state : `int` or `RandomState`, default=`None`
+Random seed or RandomState object.
+
+n_jobs : `int`, default=1
+The number of jobs to run in parallel. `-1` means using all processors.
+
 ### See Also
 
 This section should reference other `aeon` code related to the code being documented.
@@ -92,7 +100,7 @@ sections or extended summary. At the discretion of developers. Some examples are
 
 - Links to alternative implementations of the code that are external to `aeon`
 - Links to code used or taken inspiration from (sometimes this is better in the
-extended summary)
+  extended summary)
 - Explanations of quirks or limitations of the code
 
 ### References
@@ -170,7 +178,7 @@ The source files can be found in [`docs/`](https://github.com/aeon-toolkit/aeon/
 The main configuration file for sphinx is [`conf.py`](https://github.com/aeon-toolkit/aeon/blob/main/docs/conf.py)
 and the main page is [`index.md`](https://github.com/aeon-toolkit/aeon/blob/main/docs/index.md).
 To add new pages, you need to add a new `.md` (or `.rst`, but preferably Markdown)
-file and include it in a `toctree`  to include it in the sidebar.
+file and include it in a `toctree` to include it in the sidebar.
 
 To build the documentation locally, you need to install a few extra dependencies
 listed in [pyproject.toml](https://github.com/aeon-toolkit/aeon/blob/main/pyproject.toml).
@@ -190,27 +198,30 @@ cd docs
 > **Note:** If you are using Linux or MacOS, you'll have to install [**Pandoc**](https://pandoc.org/) as a dependency. Install it using the following command:
 >
 > If you're using any Debian based system, you can use the following command to install Pandoc:
+>
 > ```bash
 > sudo apt install pandoc
 > ```
 >
 > If you're using MacOS, you can use the following command to install Pandoc:
+>
 > ```bash
 > brew install pandoc
 > ```
 >
 > For all other operating systems, please checkout the [Pandoc installation guide](https://pandoc.org/installing.html).
->
 
 3. To build the website locally, run:
 
 ```powershell
 make html
 ```
+
 For Windows, instead use:
 
 ```powershell
 make.bat html
 ```
+
 This will generate HTML documentation in `docs/_build/html`. Repeat step 3 to
 regenerate the files if you make any changes.
